@@ -15,6 +15,11 @@ public class CarControls : MonoBehaviour
     [SerializeField] private float carHight;
     [SerializeField] private float accuracy;
     [SerializeField] private LayerMask groung;
+    [SerializeField] private Transform frontSide;
+    [SerializeField] private Transform backSide;
+    [SerializeField] private Transform rightSide;
+    [SerializeField] private Transform leftSide;
+    [SerializeField] private Transform botomCenter;
 
     private Vector2 inpuDirection;
     
@@ -37,8 +42,9 @@ public class CarControls : MonoBehaviour
     {
         //carRb.velocity +=  -1 * Physics.gravity * Time.deltaTime;
         ChekHight();
+        Chek();
         Vector3 moveDir = carRb.velocity;
-        Debug.Log(Mathf.Sign(inpuDirection.y * transform.forward.z) +" . "+ Mathf.Sign(moveDir.z));
+        //Debug.Log(Mathf.Sign(inpuDirection.y * transform.forward.z) +" . "+ Mathf.Sign(moveDir.z));
         speed += inpuDirection.y * acc * Time.deltaTime;
         speed *= (1 - drag);
         speed = Mathf.Clamp(speed,-frontMaxSpeed,frontMaxSpeed);
@@ -49,13 +55,16 @@ public class CarControls : MonoBehaviour
         }
 
         carRb.velocity = new Vector3(transform.forward.x * speed,carRb.velocity.y,transform.forward.z * speed);
-        transform.forward += transform.right * inpuDirection.x * Mathf.Abs(speed/frontMaxSpeed) *  turnSpeed * Time.deltaTime;
+        //transform.Rotate(new Vector3(0,0,1) * Time.deltaTime * turnSpeed * inpuDirection.x , Space.World);
+        Vector3 rot = (transform.forward + transform.right * inpuDirection.x * (speed/frontMaxSpeed) * turnSpeed * Time.deltaTime).normalized;
+        transform.rotation = Quaternion.LookRotation(rot, transform.up);
+        //transform.forward += Vector3.right * inpuDirection.x * (speed/frontMaxSpeed) * turnSpeed;
 
     }
 
     private void ChekHight(){
         RaycastHit hit;
-        if(Physics.Raycast(transform.position,transform.up * -1,out hit,carHight,groung)){
+        if(Physics.Raycast(botomCenter.position,transform.up * -1,out hit,carHight,groung)){
             float delta = carHight - hit.distance;
             if(delta <= accuracy)
                 delta = 0;
@@ -69,6 +78,30 @@ public class CarControls : MonoBehaviour
                 carRb.velocity +=  -1 * Vector3.up * Physics.gravity.y * (1 + delta) * Time.deltaTime;
             }
         }
+    }
+
+    private void Chek(){
+        RaycastHit hit;
+        Vector3 sumNormals = Vector3.zero;
+
+        if(Physics.Raycast(frontSide.position,frontSide.up * -1,out hit,carHight,groung)){
+             sumNormals += hit.normal;
+             Debug.Log("F"+ hit.normal);
+         }
+        if(Physics.Raycast(backSide.position,backSide.up * -1,out hit,carHight,groung)){
+            sumNormals += hit.normal;
+            Debug.Log("B"+ hit.normal);
+        }
+        if(Physics.Raycast(rightSide.position,rightSide.up * -1,out hit,carHight,groung)){
+            sumNormals += hit.normal;
+            Debug.Log("R"+ hit.normal);
+        }
+        if(Physics.Raycast(leftSide.position,leftSide.up * -1,out hit,carHight,groung)){
+            sumNormals += hit.normal;
+            Debug.Log("L"+ hit.normal);
+        }
+        transform.rotation = Quaternion.LookRotation(Vector3.Lerp(transform.up,sumNormals.normalized,Time.deltaTime * 5), -transform.forward);
+        transform.Rotate(Vector3.right, 90f);
     }
 
 }
