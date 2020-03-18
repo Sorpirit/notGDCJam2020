@@ -29,16 +29,20 @@ public class Enemytest : MonoBehaviour
                 agent.SetDestination(hit.point);
             }
         }
-        Debug.DrawLine(transform.position,transform.position + agent.desiredVelocity,Color.red,.1f);
-        Debug.DrawLine(transform.position,transform.position + agent.desiredVelocity,Color.red,.1f);
         Vector2 input = Vector2.zero;
         Vector3 delta = agent.desiredVelocity.normalized - transform.forward;
         delta = delta.normalized;
-        input.x = delta.x * -1;
+        if(Vector3.Dot(agent.desiredVelocity.normalized,transform.forward) <= -.9){input.x = 0;}
+        input.x = Mathf.Clamp(delta.x,-1,1);
         input.y = agent.desiredVelocity.magnitude;
-        input.y = Mathf.Min(input.y,1);
+        input.y = Mathf.Clamp(input.y,-1,1);
+        if(agent.steeringTarget.magnitude <= agent.stoppingDistance)
+            input.y = 0;
         car.InputDir = input;
-        Debug.Log(car.InputDir + " : " + input + " d: " + delta);
+        Debug.Log(car.InputDir + " : " + input + " d: " + delta + " m: " + Vector3.Dot(agent.desiredVelocity.normalized,transform.forward));
+        Debug.DrawLine(transform.position,transform.position + agent.desiredVelocity,Color.red,.1f);
+        //Debug.DrawLine(transform.position,delta + transform.position,Color.blue,.1f);
+        //Debug.DrawLine(transform.position,delta,Color.blue,.1f);
         
     }
 }
