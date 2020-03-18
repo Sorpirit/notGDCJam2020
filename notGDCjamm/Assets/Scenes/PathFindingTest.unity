@@ -1681,6 +1681,11 @@ PrefabInstance:
       propertyPath: acc
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 2249142535106772305, guid: 1ea7e1365c7a7e64a920361b44a31d06,
+        type: 3}
+      propertyPath: useKeyboardInput
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2249142535106772311, guid: 1ea7e1365c7a7e64a920361b44a31d06,
         type: 3}
       propertyPath: m_LocalPosition.x
