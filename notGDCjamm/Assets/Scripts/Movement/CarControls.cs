@@ -20,8 +20,11 @@ public class CarControls : MonoBehaviour
     [SerializeField] private Transform rightSide;
     [SerializeField] private Transform leftSide;
     [SerializeField] private Transform botomCenter;
+    [SerializeField] private bool useKeyboardInput;
 
     private Vector2 inpuDirection;
+
+    public Vector2 InputDir{get => inpuDirection; set => inpuDirection = value;}
     
 
 
@@ -35,7 +38,8 @@ public class CarControls : MonoBehaviour
 
     private void Update()
     {
-        inpuDirection = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
+        if(useKeyboardInput)
+            inpuDirection = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
     }
 
     private void FixedUpdate()
@@ -86,19 +90,15 @@ public class CarControls : MonoBehaviour
 
         if(Physics.Raycast(frontSide.position,frontSide.up * -1,out hit,carHight,groung)){
              sumNormals += hit.normal;
-             Debug.Log("F"+ hit.normal);
-         }
+        }
         if(Physics.Raycast(backSide.position,backSide.up * -1,out hit,carHight,groung)){
             sumNormals += hit.normal;
-            Debug.Log("B"+ hit.normal);
         }
         if(Physics.Raycast(rightSide.position,rightSide.up * -1,out hit,carHight,groung)){
             sumNormals += hit.normal;
-            Debug.Log("R"+ hit.normal);
         }
         if(Physics.Raycast(leftSide.position,leftSide.up * -1,out hit,carHight,groung)){
             sumNormals += hit.normal;
-            Debug.Log("L"+ hit.normal);
         }
         transform.rotation = Quaternion.LookRotation(Vector3.Lerp(transform.up,sumNormals.normalized,Time.deltaTime * 5), -transform.forward);
         transform.Rotate(Vector3.right, 90f);
