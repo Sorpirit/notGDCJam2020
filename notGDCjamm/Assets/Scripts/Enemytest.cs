@@ -30,6 +30,7 @@ public class Enemytest : MonoBehaviour
             }
         }
         Debug.DrawLine(transform.position,transform.position + agent.desiredVelocity,Color.red,.1f);
+        Debug.DrawLine(transform.position,transform.position + agent.desiredVelocity,Color.red,.1f);
         Vector2 input = Vector2.zero;
         Vector3 delta = agent.desiredVelocity.normalized - transform.forward;
         delta = delta.normalized;
