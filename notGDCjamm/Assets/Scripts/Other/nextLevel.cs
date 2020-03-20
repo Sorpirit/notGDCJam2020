@@ -20,7 +20,8 @@ public class nextLevel : MonoBehaviour
             finCam.SetActive(true);
             animator.SetTrigger("finCam");
             Player.SetActive(false);
+            MainPanel.SetActive(false);
+            GlobalTimer.timer.IsTimerRunning = false;
         }
-        MainPanel.SetActive(false);
     }
 }

@@ -30,8 +30,10 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator wait()
     {
+        Cimage.gameObject.SetActive(false);
         Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         yield return new WaitForSeconds(.30f);
+        Cimage.gameObject.SetActive(true);
         Cimage.sprite = countDown[0];
         yield return new WaitForSeconds(1);
         Cimage.sprite = countDown[1];
@@ -41,6 +43,7 @@ public class GameManager : MonoBehaviour
         Cimage.sprite = countDown[3];
         Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        GlobalTimer.timer.IsTimerRunning = true;
         yield return new WaitForSeconds(1);
         Cpanel.SetActive(false);
     }
