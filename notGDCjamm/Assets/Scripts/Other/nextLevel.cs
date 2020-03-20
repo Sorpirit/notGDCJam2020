@@ -5,7 +5,7 @@ using UnityEngine;
 public class nextLevel : MonoBehaviour
 {
     public Animator animator;
-
+    public GameObject MainPanel;
     public GameObject finCam;
     public GameObject Player;
 
@@ -21,5 +21,6 @@ public class nextLevel : MonoBehaviour
             animator.SetTrigger("finCam");
             Player.SetActive(false);
         }
+        MainPanel.SetActive(false);
     }
 }

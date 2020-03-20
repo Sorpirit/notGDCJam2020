@@ -13,7 +13,8 @@ public class TimeVisualiser : MonoBehaviour {
 
     private void Update()
     {
-        timerUI.text = (int) GlobalTimer.timer.Countdown + ":" +(int) (100*(GlobalTimer.timer.Countdown - (int) GlobalTimer.timer.Countdown));
+        timerUI.text = (int)GlobalTimer.timer.Countdown/4 + " ";
+        //timerUI.text = (int) GlobalTimer.timer.Countdown + ":" +(int) (100*(GlobalTimer.timer.Countdown - (int) GlobalTimer.timer.Countdown));
     }
 
 }
