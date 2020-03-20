@@ -9,9 +9,20 @@ public class GlobalTimer : MonoBehaviour {
 
     private float time;
     private bool timeOut;
+    private bool isTimerRunning;
 
     public float Countdown{get => time; set => time = value;}
+    public bool IsTimerRunning
+    {
+        get => isTimerRunning; 
+        set
+        {
+            TimerStateChenged?.Invoke();
+            isTimerRunning = value;
+        }
+    }
     public event Action TimeIsOut;
+    public event Action TimerStateChenged;
 
     private void Awake()
     {
@@ -27,7 +38,7 @@ public class GlobalTimer : MonoBehaviour {
 
     private void Update()
     {
-        if(!timeOut) time -= Time.deltaTime;
+        if(isTimerRunning && !timeOut) time -= Time.deltaTime;
         
         if(time <= 0 && !timeOut)
         {
@@ -35,5 +46,6 @@ public class GlobalTimer : MonoBehaviour {
             TimeIsOut?.Invoke();
         }
     }
+    
 
 }
