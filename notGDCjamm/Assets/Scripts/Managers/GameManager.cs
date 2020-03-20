@@ -11,10 +11,12 @@ public class GameManager : MonoBehaviour
     public Image image;
     public GameObject Player;
     public GameObject Cpanel;
+    public GameObject PauseButtonUI;
     public Animator animator;
 
     private void Start()
     {
+        PauseButtonUI.SetActive(false);
         Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         StartCoroutine(wait());
     }
@@ -46,6 +48,20 @@ public class GameManager : MonoBehaviour
         GlobalTimer.timer.IsTimerRunning = true;
         yield return new WaitForSeconds(1);
         Cpanel.SetActive(false);
+        PauseButtonUI.SetActive(true);
+    }
+    public void Pause()
+    {
+        GlobalTimer.timer.IsTimerRunning = false;
+        animator.SetInteger("GameState", 2);
+        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+    }
+    public void Unpause()
+    {
+        GlobalTimer.timer.IsTimerRunning = true;
+        animator.SetInteger("GameState", 0);
+        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
     }
 
 }

@@ -17,9 +17,9 @@ public class nextLevel : MonoBehaviour
     {
         if (collision.gameObject == Player)
         {
+            Player.SetActive(false);
             finCam.SetActive(true);
             animator.SetTrigger("finCam");
-            Player.SetActive(false);
             MainPanel.SetActive(false);
             GlobalTimer.timer.IsTimerRunning = false;
         }
