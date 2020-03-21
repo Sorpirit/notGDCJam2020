@@ -23,8 +23,10 @@ public class CarControls : MonoBehaviour
     [SerializeField] private bool useKeyboardInput;
 
     private Vector2 inpuDirection;
+    private bool blockMovment = false;
 
     public Vector2 InputDir{get => inpuDirection; set => inpuDirection = value;}
+    public bool BlockMovment{get => blockMovment; set => blockMovment = value;}
     
 
 
@@ -47,6 +49,12 @@ public class CarControls : MonoBehaviour
         //carRb.velocity +=  -1 * Physics.gravity * Time.deltaTime;
         ChekHight();
         Chek();
+        if(!blockMovment)
+            Move();
+
+    }
+
+    private void Move(){
         Vector3 moveDir = carRb.velocity;
         //Debug.Log(Mathf.Sign(inpuDirection.y * transform.forward.z) +" . "+ Mathf.Sign(moveDir.z));
         speed += inpuDirection.y * acc * Time.deltaTime;
@@ -63,7 +71,6 @@ public class CarControls : MonoBehaviour
         Vector3 rot = (transform.forward + transform.right * inpuDirection.x * (speed/frontMaxSpeed) * turnSpeed * Time.deltaTime).normalized;
         transform.rotation = Quaternion.LookRotation(rot, transform.up);
         //transform.forward += Vector3.right * inpuDirection.x * (speed/frontMaxSpeed) * turnSpeed;
-
     }
 
     private void ChekHight(){
@@ -103,5 +110,7 @@ public class CarControls : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(Vector3.Lerp(transform.up,sumNormals.normalized,Time.deltaTime * 5), -transform.forward);
         transform.Rotate(Vector3.right, 90f);
     }
+
+
 
 }
