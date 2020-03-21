@@ -5,9 +5,9 @@ public class IceCream : MonoBehaviour, ICollectible
 
     [SerializeField] private float bonusTime;
 
-    public void Collect(GameObject grabber)
+    public void Collect()
     {
-        if(!grabber.TryGetComponent<EnemyController>(out EnemyController c)) GlobalTimer.timer.Countdown += bonusTime;
+        GlobalTimer.timer.Countdown += bonusTime;
         Destroy(gameObject);
     }
 }
