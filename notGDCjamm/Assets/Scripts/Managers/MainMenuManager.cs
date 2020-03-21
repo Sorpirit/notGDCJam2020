@@ -17,4 +17,20 @@ public class MainMenuManager : MonoBehaviour
         yield return new WaitForSeconds(.30f);
         SceneManager.LoadScene(sceneBuildIndex: i+1);
     }
+    public void openSettings()
+    {
+        animator.SetTrigger("openSettings");
+    }
+    public void closeSettings()
+    {
+        animator.SetTrigger("closeSettings");
+    }
+    public void openCredits()
+    {
+        animator.SetTrigger("openCredits");
+    }
+    public void closeCredits()
+    {
+        animator.SetTrigger("closeCredits");
+    }
 }
