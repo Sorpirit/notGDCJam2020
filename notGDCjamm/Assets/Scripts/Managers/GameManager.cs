@@ -14,12 +14,10 @@ public class GameManager : MonoBehaviour
     public GameObject PanelButtonUI;
     public Animator animator;
 
-    private CarControls playerCar;
-
     private void Start()
     {
         PanelButtonUI.SetActive(false);
-        playerCar = Player.GetComponent<CarControls>();
+        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         StartCoroutine(wait());
     }
     private void Update()
@@ -36,19 +34,20 @@ public class GameManager : MonoBehaviour
     {
         animator.SetTrigger("openP");
         GlobalTimer.timer.IsTimerRunning = false;
-        playerCar.BlockMovment = true;
+        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
     public void Unpause()
     {
         animator.SetTrigger("closeP");
         GlobalTimer.timer.IsTimerRunning = true;
-        playerCar.BlockMovment = false;
+        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
     }
     IEnumerator wait()
     {
         Cimage.gameObject.SetActive(false);
         PanelButtonUI.SetActive(false);
-        playerCar.BlockMovment = true;
+        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         yield return new WaitForSeconds(.5f);
         PanelButtonUI.SetActive(false);
         Cimage.gameObject.SetActive(true);
@@ -59,7 +58,8 @@ public class GameManager : MonoBehaviour
         Cimage.sprite = countDown[2];
         yield return new WaitForSeconds(1);
         Cimage.sprite = countDown[3];
-        playerCar.BlockMovment = false;
+        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         GlobalTimer.timer.IsTimerRunning = true;
     }
 
