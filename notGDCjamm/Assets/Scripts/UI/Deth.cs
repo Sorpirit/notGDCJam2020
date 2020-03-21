@@ -11,22 +11,30 @@ public class Deth : MonoBehaviour
 
     public GameObject Panel;
 
+    bool done;
+
     private void OnEnable()
     {
         gameObject.GetComponent<GlobalTimer>().TimeIsOut += OutOfIce;
     }
     private void OutOfIce()
     {
-        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-        StartCoroutine(wait());
+        if(done)
+        {
+            Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            animator.SetTrigger("outOfIce");
+            done = false;
+        }
+        //StartCoroutine(wait());
     }
-    IEnumerator wait()
+    /*IEnumerator wait()
     {
         animator.SetInteger("GameState", 1);
         yield return new WaitForSeconds(1.5f);
-    }
+    }*/
     private void Start()
     {
+        done = true;
         Panel.SetActive(false);
     }
 }

@@ -2845,7 +2845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &457113767
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4648,7 +4648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -89.899994, y: -42}
+  m_AnchoredPosition: {x: -89.8999, y: -42}
   m_SizeDelta: {x: 61.899994, y: 71.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &745531864
@@ -5065,7 +5065,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967040
+    rgba: 16776960
   m_fontColor: {r: 0, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -6428,7 +6428,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967040
+    rgba: 16776960
   m_fontColor: {r: 0, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -6830,7 +6830,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6953,7 +6953,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1177036064
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9661,7 +9661,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967040
+    rgba: 16776960
   m_fontColor: {r: 0, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -11962,7 +11962,7 @@ MonoBehaviour:
   image: {fileID: 597883726}
   Player: {fileID: 1467211805}
   Cpanel: {fileID: 457113766}
-  PauseButtonUI: {fileID: 172004839}
+  PanelButtonUI: {fileID: 172004839}
   animator: {fileID: 405877293}
 --- !u!1 &2140512709 stripped
 GameObject:

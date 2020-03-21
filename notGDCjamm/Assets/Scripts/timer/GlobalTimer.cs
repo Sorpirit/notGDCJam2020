@@ -40,7 +40,7 @@ public class GlobalTimer : MonoBehaviour {
     {
         if(isTimerRunning && !timeOut) time -= Time.deltaTime;
         
-        if(time <= 0 && !timeOut)
+        if(time <= .5f)
         {
             timeOut = true;
             TimeIsOut?.Invoke();

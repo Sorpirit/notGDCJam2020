@@ -11,12 +11,12 @@ public class GameManager : MonoBehaviour
     public Image image;
     public GameObject Player;
     public GameObject Cpanel;
-    public GameObject PauseButtonUI;
+    public GameObject PanelButtonUI;
     public Animator animator;
 
     private void Start()
     {
-        PauseButtonUI.SetActive(false);
+        PanelButtonUI.SetActive(false);
         Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         StartCoroutine(wait());
     }
@@ -30,11 +30,26 @@ public class GameManager : MonoBehaviour
 
         image.sprite = iceImages[(int)b];
     }
+    public void Pause()
+    {
+        animator.SetTrigger("openP");
+        GlobalTimer.timer.IsTimerRunning = false;
+        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+    }
+    public void Unpause()
+    {
+        animator.SetTrigger("closeP");
+        GlobalTimer.timer.IsTimerRunning = true;
+        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+    }
     IEnumerator wait()
     {
         Cimage.gameObject.SetActive(false);
+        PanelButtonUI.SetActive(false);
         Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-        yield return new WaitForSeconds(.30f);
+        yield return new WaitForSeconds(.5f);
+        PanelButtonUI.SetActive(false);
         Cimage.gameObject.SetActive(true);
         Cimage.sprite = countDown[0];
         yield return new WaitForSeconds(1);
@@ -46,22 +61,6 @@ public class GameManager : MonoBehaviour
         Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         GlobalTimer.timer.IsTimerRunning = true;
-        yield return new WaitForSeconds(1);
-        Cpanel.SetActive(false);
-        PauseButtonUI.SetActive(true);
-    }
-    public void Pause()
-    {
-        GlobalTimer.timer.IsTimerRunning = false;
-        animator.SetInteger("GameState", 2);
-        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-    }
-    public void Unpause()
-    {
-        GlobalTimer.timer.IsTimerRunning = true;
-        animator.SetInteger("GameState", 0);
-        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
     }
 
 }
