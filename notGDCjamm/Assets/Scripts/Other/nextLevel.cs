@@ -5,7 +5,7 @@ using UnityEngine;
 public class nextLevel : MonoBehaviour
 {
     public Animator animator;
-    public GameObject MainPanel;
+    public GameObject MainCanvasUI;
     public GameObject finCam;
     public GameObject Player;
 
@@ -20,7 +20,7 @@ public class nextLevel : MonoBehaviour
             Player.SetActive(false);
             finCam.SetActive(true);
             animator.SetTrigger("finCam");
-            MainPanel.SetActive(false);
+            MainCanvasUI.SetActive(false);
             GlobalTimer.timer.IsTimerRunning = false;
         }
     }
