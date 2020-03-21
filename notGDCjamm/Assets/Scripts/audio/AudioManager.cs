@@ -21,9 +21,18 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+            s.source.playOnAwake = s.playOnAwake;
         }
 
         isInited = true;
+    }
+    private void Start()
+    {
+        Sound s = Array.Find(sounds, sound => sound.clip);
+        if (s.source.playOnAwake)
+        {
+            s.source.Play();
+        }
     }
 
     public void PlaySound(string name)
@@ -72,6 +81,18 @@ public class AudioManager : MonoBehaviour
 
                 s.source.pitch = 0;
             }
+        }
+    }
+    public void SetSound(bool a, string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (a)
+        {
+            s.source.pitch = 1;
+        }
+        else if (!a)
+        {
+            s.source.pitch = 0;
         }
     }
 }
