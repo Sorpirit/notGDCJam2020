@@ -1,5 +1,6 @@
+using UnityEngine;
 public interface ICollectible {
     
-    void Collect();
+    void Collect(GameObject grabber);
 
 }
