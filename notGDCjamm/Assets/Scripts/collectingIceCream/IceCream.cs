@@ -7,7 +7,7 @@ public class IceCream : MonoBehaviour, ICollectible
 
     public void Collect(GameObject grabber)
     {
-        if(grabber.TryGetComponent<EnemyController>(out EnemyController c))
+        if(!grabber.TryGetComponent<EnemyController>(out EnemyController c))
         {
             GlobalTimer.timer.Countdown += bonusTime;
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<AudioManager>().PlaySound("collect");
