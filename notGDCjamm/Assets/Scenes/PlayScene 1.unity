@@ -8325,6 +8325,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cam
       objectReference: {fileID: 0}
+    - target: {fileID: 4793644715650380294, guid: 7fa6daf176bed42e69b7d2f8b828c5be,
+        type: 3}
+      propertyPath: m_Target
+      value: 
+      objectReference: {fileID: 1467211806}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fa6daf176bed42e69b7d2f8b828c5be, type: 3}
 --- !u!1 &1056258927
@@ -10776,6 +10781,12 @@ BoxCollider:
 --- !u!1 &1467211805 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2249142535106772298, guid: 1ea7e1365c7a7e64a920361b44a31d06,
+    type: 3}
+  m_PrefabInstance: {fileID: 385409462}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1467211806 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2249142535106772311, guid: 1ea7e1365c7a7e64a920361b44a31d06,
     type: 3}
   m_PrefabInstance: {fileID: 385409462}
   m_PrefabAsset: {fileID: 0}
