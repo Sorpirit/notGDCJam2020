@@ -55,6 +55,11 @@ public class GameManager : MonoBehaviour
         float b = (a / 100) * 8;
 
         image.sprite = iceImages[(int)b];
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            au.PlaySound("engineA");
+        }
     }
     public void Pause()
     {
