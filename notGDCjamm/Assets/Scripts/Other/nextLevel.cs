@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class nextLevel : MonoBehaviour
@@ -8,6 +9,7 @@ public class nextLevel : MonoBehaviour
     public GameObject MainCanvasUI;
     public GameObject finCam;
     public GameObject Player;
+    public AudioManager au;
 
     private void Start()
     {
@@ -22,6 +24,13 @@ public class nextLevel : MonoBehaviour
             animator.SetTrigger("finCam");
             MainCanvasUI.SetActive(false);
             GlobalTimer.timer.IsTimerRunning = false;
+            StartCoroutine(wait());
         }
+    }
+    IEnumerator wait ()
+    {
+        au.SetSound(false, "music");
+        yield return new WaitForSeconds(1);
+        au.PlaySound("finish");
     }
 }
