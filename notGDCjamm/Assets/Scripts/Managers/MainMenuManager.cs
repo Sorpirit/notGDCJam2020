@@ -42,6 +42,7 @@ public class MainMenuManager : MonoBehaviour
     }
     public void GoToPlay(int SceneInt)
     {
+        au.PlaySound("menuConfirm");
         StartCoroutine(wait(SceneInt));
     }
     IEnumerator wait(int i)

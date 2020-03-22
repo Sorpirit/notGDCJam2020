@@ -7,7 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/logo.unity
-    guid: ff8523685c027498bab10b7f4f0a95ae
+    guid: ee8b41610f001432bbf9952ad737fd60
   - enabled: 1
     path: Assets/Scenes/mainMenu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
