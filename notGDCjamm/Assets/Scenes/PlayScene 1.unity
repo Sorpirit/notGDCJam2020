@@ -1610,6 +1610,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8269907941574476900, guid: 303380b36e3356b489bd90051e53b68b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8269907941574476921, guid: 303380b36e3356b489bd90051e53b68b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9299,10 +9304,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1755433949}
+  animator2: {fileID: 405877293}
   MainCanvasUI: {fileID: 405877288}
   finCam: {fileID: 1755433947}
   Player: {fileID: 1467211805}
   au: {fileID: 2134725472}
+  tex: {fileID: 781829045}
 --- !u!1001 &1232665516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9477,6 +9484,11 @@ PrefabInstance:
     - target: {fileID: 8269907941574476900, guid: 303380b36e3356b489bd90051e53b68b,
         type: 3}
       propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8269907941574476900, guid: 303380b36e3356b489bd90051e53b68b,
+        type: 3}
+      propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8269907941574476921, guid: 303380b36e3356b489bd90051e53b68b,
@@ -11486,7 +11498,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967040
-  m_fontColor: {r: 0, g: 1, b: 1, a: 0}
+  m_fontColor: {r: 1, g: 0.9647059, b: 0.92941177, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
