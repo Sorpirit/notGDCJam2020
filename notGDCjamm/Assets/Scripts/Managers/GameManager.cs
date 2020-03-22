@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
             au.SetSound(true, "select");
             au.SetSound(true, "collect");
             au.SetSound(true, "finish");
+            au.SetSound(true, "engine");
         }
         else if (PlayerPrefs.GetInt("effects") == 0)
         {
@@ -41,7 +42,9 @@ public class GameManager : MonoBehaviour
             au.SetSound(false, "select");
             au.SetSound(false, "collect");
             au.SetSound(false, "finish");
+            au.SetSound(false, "engine");
         }
+        au.PlaySound("engine");
     }
     private void Update()
     {

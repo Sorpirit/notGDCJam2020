@@ -14908,6 +14908,13 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
+  - name: engine
+    clip: {fileID: 8300000, guid: cc6b468d6fa94461082d25206214b5e3, type: 3}
+    volume: 0.25
+    pitch: 0
+    loop: 1
+    playOnAwake: 1
+    source: {fileID: 0}
 --- !u!1001 &2138625827
 PrefabInstance:
   m_ObjectHideFlags: 0
