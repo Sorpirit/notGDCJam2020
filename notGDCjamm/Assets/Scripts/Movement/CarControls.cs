@@ -46,7 +46,6 @@ public class CarControls : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //carRb.velocity +=  -1 * Physics.gravity * Time.deltaTime;
         ChekHight();
         Chek();
         if(!blockMovment)
