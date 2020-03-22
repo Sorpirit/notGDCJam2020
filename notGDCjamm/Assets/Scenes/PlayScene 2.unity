@@ -6994,10 +6994,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1755433949}
+  animator2: {fileID: 0}
   MainCanvasUI: {fileID: 405877288}
   finCam: {fileID: 1755433947}
   Player: {fileID: 1467211805}
   au: {fileID: 2134725471}
+  tex: {fileID: 781829045}
 --- !u!1001 &1232061244
 PrefabInstance:
   m_ObjectHideFlags: 0

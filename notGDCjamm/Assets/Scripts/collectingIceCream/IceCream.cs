@@ -8,6 +8,7 @@ public class IceCream : MonoBehaviour, ICollectible
     public void Collect()
     {
         GlobalTimer.timer.Countdown += bonusTime;
+        GameObject.FindGameObjectWithTag("GameManager").GetComponent<AudioManager>().PlaySound("collect");
         Destroy(gameObject);
     }
 }

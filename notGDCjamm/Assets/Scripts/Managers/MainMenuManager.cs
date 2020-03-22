@@ -18,24 +18,26 @@ public class MainMenuManager : MonoBehaviour
         if (PlayerPrefs.GetInt("music") == 1)
         {
             bMusic = true;
-            musicButton.material.color.b.Equals(255);
+            musicButton.color = new Color32(0, 255, 255, 255);
             au.sounds[0].playOnAwake = true;
         }
         else if (PlayerPrefs.GetInt("music") == 0)
         {
+            au.SetSound(false, "menuMusic");
             bMusic = false;
-            musicButton.material.color.b.Equals(0);
+            musicButton.color = new Color32(255, 0, 0, 255);
             au.sounds[0].playOnAwake = false;
         }
         if (PlayerPrefs.GetInt("effects") == 1)
         {
             bEffects = true;
-            efectsButton.material.color.b.Equals(255);
+            efectsButton.color = new Color32(0, 255, 255, 255);
         }
         else if (PlayerPrefs.GetInt("effects") == 0)
         {
+            au.SetSound(false, "menuConfirm");
             bEffects = false;
-            efectsButton.material.color.b.Equals(0);
+            efectsButton.color = new Color32(255, 0, 0, 255);
         }
     }
     public void GoToPlay(int SceneInt)
@@ -85,14 +87,14 @@ public class MainMenuManager : MonoBehaviour
         {
             au.SetSound(false, "menuMusic");
             PlayerPrefs.SetInt("music", 0);
-            musicButton.material.color.b.Equals(0);
+            musicButton.color = new Color32(255, 0, 0, 255);
             bMusic = false;
         }
         else if(!bMusic)
         {
             au.SetSound(true, "menuMusic");
             PlayerPrefs.SetInt("music", 1);
-            musicButton.material.color.b.Equals(255);
+            musicButton.color = new Color32(0, 255, 255, 255);
             bMusic = true;
         }
     }
@@ -102,14 +104,14 @@ public class MainMenuManager : MonoBehaviour
         {
             au.SetSound(false, "menuConfirm");
             PlayerPrefs.SetInt("effects", 0);
-            musicButton.material.color.b.Equals(0);
+            efectsButton.color = new Color32(255, 0, 0, 255);
             bEffects = false;
         }
         else if (!bEffects)
         {
             au.SetSound(true, "menuConfirm");
             PlayerPrefs.SetInt("effects", 1);
-            musicButton.material.color.b.Equals(255);
+            efectsButton.color = new Color32(0, 255, 255, 255);
             bEffects = true;
         }
     }

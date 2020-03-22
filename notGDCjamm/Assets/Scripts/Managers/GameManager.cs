@@ -13,12 +13,35 @@ public class GameManager : MonoBehaviour
     public GameObject Cpanel;
     public GameObject PanelButtonUI;
     public Animator animator;
+    public AudioManager au;
 
     private void Start()
     {
         PanelButtonUI.SetActive(false);
         Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         StartCoroutine(wait());
+        if (PlayerPrefs.GetInt("music") == 1)
+        {
+            au.SetSound(true, "music");
+        }
+        else if (PlayerPrefs.GetInt("music") == 0)
+        {
+            au.SetSound(false, "music");
+        }
+        if (PlayerPrefs.GetInt("effects") == 1)
+        {
+            au.SetSound(true, "countdown");
+            au.SetSound(true, "select");
+            au.SetSound(true, "collect");
+            au.SetSound(true, "finish");
+        }
+        else if (PlayerPrefs.GetInt("effects") == 0)
+        {
+            au.SetSound(false, "countdown");
+            au.SetSound(false, "select");
+            au.SetSound(false, "collect");
+            au.SetSound(false, "finish");
+        }
     }
     private void Update()
     {
@@ -33,11 +56,13 @@ public class GameManager : MonoBehaviour
     public void Pause()
     {
         animator.SetTrigger("openP");
+        au.PlaySound("select");
         GlobalTimer.timer.IsTimerRunning = false;
         Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
     public void Unpause()
     {
+        au.PlaySound("select");
         animator.SetTrigger("closeP");
         GlobalTimer.timer.IsTimerRunning = true;
         Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
@@ -52,6 +77,7 @@ public class GameManager : MonoBehaviour
         PanelButtonUI.SetActive(false);
         Cimage.gameObject.SetActive(true);
         Cimage.sprite = countDown[0];
+        au.PlaySound("countdown");
         yield return new WaitForSeconds(1);
         Cimage.sprite = countDown[1];
         yield return new WaitForSeconds(1);
@@ -61,6 +87,8 @@ public class GameManager : MonoBehaviour
         Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         GlobalTimer.timer.IsTimerRunning = true;
+        yield return new WaitForSeconds(.5f);
+        au.PlaySound("music");
     }
 
 }

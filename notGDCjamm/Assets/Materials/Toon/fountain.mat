@@ -20,10 +20,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - _Brightness: 0.264
-    - _Detail: 0.169
+    - _Brightness: 0.256
+    - _Detail: 0.176
     - _Outline: 0.0005
-    - _Strength: 0.493
+    - _Strength: 0.5
     m_Colors:
     - _Color: {r: 0.6290389, g: 0.5865966, b: 0.735849, a: 1}
     - _OutlineColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}

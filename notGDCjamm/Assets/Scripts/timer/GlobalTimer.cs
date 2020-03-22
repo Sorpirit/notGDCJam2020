@@ -29,7 +29,7 @@ public class GlobalTimer : MonoBehaviour {
         if(timer == null){
             timer = this;
         }else if(timer != this){
-            Destroy(gameObject);
+            Destroy(this);
             return;
         }
         time = StartTime;
