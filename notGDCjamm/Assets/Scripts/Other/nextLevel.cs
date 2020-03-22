@@ -31,7 +31,7 @@ public class nextLevel : MonoBehaviour
         else
         {
             collision.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            Player.GetComponent<CarControls>().BlockMovment = true;
+            Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             animator2.SetTrigger("outOfIce");
             GlobalTimer.timer.IsTimerRunning = false;
             tex.text = "your enemy has delivered the ice cream";

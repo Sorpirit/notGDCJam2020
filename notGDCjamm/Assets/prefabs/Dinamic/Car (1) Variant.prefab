@@ -50,18 +50,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6474430b668d244d832cb7684fdb699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1879829629450995731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8269907941574476900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7ffa7539977341779cb64612a799852, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7922414815899302190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72,7 +60,7 @@ PrefabInstance:
     - target: {fileID: 2249142535106772298, guid: 1ea7e1365c7a7e64a920361b44a31d06,
         type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Car (1) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2249142535106772305, guid: 1ea7e1365c7a7e64a920361b44a31d06,
         type: 3}

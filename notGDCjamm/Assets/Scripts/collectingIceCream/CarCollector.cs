@@ -6,7 +6,7 @@ public class CarCollector : MonoBehaviour {
     {
         if(other.gameObject.TryGetComponent<ICollectible>(out ICollectible collectible))
         {
-            collectible.Collect(gameObject);
+            collectible.Collect();
         }
     }
 
