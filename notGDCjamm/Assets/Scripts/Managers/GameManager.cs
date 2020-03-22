@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
 
         image.sprite = iceImages[(int)b];
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             au.PlaySound("engineA");
         }
