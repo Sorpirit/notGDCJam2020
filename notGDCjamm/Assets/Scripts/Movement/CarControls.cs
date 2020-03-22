@@ -26,7 +26,7 @@ public class CarControls : MonoBehaviour
     private bool blockMovment = false;
 
     public Vector2 InputDir{get => inpuDirection; set => inpuDirection = value;}
-    public bool BlockMovment{get => blockMovment; set => blockMovment = value;}
+    public bool BlockMovment{get => blockMovment; set{blockMovment = value; carRb.velocity = Vector3.zero;}}
     
 
 
