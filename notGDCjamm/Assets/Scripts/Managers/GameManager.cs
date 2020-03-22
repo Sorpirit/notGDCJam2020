@@ -15,10 +15,18 @@ public class GameManager : MonoBehaviour
     public Animator animator;
     public AudioManager au;
 
+
+    private CarControls playerCar;
+
+    private void Awake()
+    {
+        playerCar = Player.GetComponent<CarControls>();
+    }
+
     private void Start()
     {
         PanelButtonUI.SetActive(false);
-        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        playerCar.BlockMovment = true;
         StartCoroutine(wait());
         if (PlayerPrefs.GetInt("music") == 1)
         {
@@ -34,7 +42,6 @@ public class GameManager : MonoBehaviour
             au.SetSound(true, "select");
             au.SetSound(true, "collect");
             au.SetSound(true, "finish");
-            au.SetSound(true, "engine");
         }
         else if (PlayerPrefs.GetInt("effects") == 0)
         {
@@ -42,9 +49,7 @@ public class GameManager : MonoBehaviour
             au.SetSound(false, "select");
             au.SetSound(false, "collect");
             au.SetSound(false, "finish");
-            au.SetSound(false, "engine");
         }
-        au.PlaySound("engine");
     }
     private void Update()
     {
@@ -61,21 +66,20 @@ public class GameManager : MonoBehaviour
         animator.SetTrigger("openP");
         au.PlaySound("select");
         GlobalTimer.timer.IsTimerRunning = false;
-        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        playerCar.BlockMovment = true;
     }
     public void Unpause()
     {
         au.PlaySound("select");
         animator.SetTrigger("closeP");
         GlobalTimer.timer.IsTimerRunning = true;
-        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        playerCar.BlockMovment = false;
     }
     IEnumerator wait()
     {
         Cimage.gameObject.SetActive(false);
         PanelButtonUI.SetActive(false);
-        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        playerCar.BlockMovment = true;
         yield return new WaitForSeconds(.5f);
         PanelButtonUI.SetActive(false);
         Cimage.gameObject.SetActive(true);
@@ -87,8 +91,7 @@ public class GameManager : MonoBehaviour
         Cimage.sprite = countDown[2];
         yield return new WaitForSeconds(1);
         Cimage.sprite = countDown[3];
-        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        playerCar.BlockMovment = false;
         GlobalTimer.timer.IsTimerRunning = true;
         yield return new WaitForSeconds(.5f);
         au.PlaySound("music");

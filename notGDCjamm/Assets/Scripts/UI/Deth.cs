@@ -21,7 +21,7 @@ public class Deth : MonoBehaviour
     {
         if(done)
         {
-            Player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            Player.GetComponent<CarControls>().BlockMovment = true;
             animator.SetTrigger("outOfIce");
             done = false;
         }

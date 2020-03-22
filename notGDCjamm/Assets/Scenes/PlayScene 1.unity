@@ -1646,7 +1646,7 @@ PrefabInstance:
     - target: {fileID: 8269907941574476921, guid: 303380b36e3356b489bd90051e53b68b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 94.73
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 8269907941574476921, guid: 303380b36e3356b489bd90051e53b68b,
         type: 3}
@@ -3383,7 +3383,7 @@ PrefabInstance:
     - target: {fileID: 2249142535106772311, guid: 1ea7e1365c7a7e64a920361b44a31d06,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30.69
+      value: 33.01
       objectReference: {fileID: 0}
     - target: {fileID: 2249142535106772311, guid: 1ea7e1365c7a7e64a920361b44a31d06,
         type: 3}
@@ -3393,7 +3393,7 @@ PrefabInstance:
     - target: {fileID: 2249142535106772311, guid: 1ea7e1365c7a7e64a920361b44a31d06,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 94.79
+      value: 89.82
       objectReference: {fileID: 0}
     - target: {fileID: 2249142535106772311, guid: 1ea7e1365c7a7e64a920361b44a31d06,
         type: 3}
@@ -9525,7 +9525,7 @@ PrefabInstance:
     - target: {fileID: 8269907941574476921, guid: 303380b36e3356b489bd90051e53b68b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.82
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 8269907941574476921, guid: 303380b36e3356b489bd90051e53b68b,
         type: 3}
@@ -9535,7 +9535,7 @@ PrefabInstance:
     - target: {fileID: 8269907941574476921, guid: 303380b36e3356b489bd90051e53b68b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 88.67
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 8269907941574476921, guid: 303380b36e3356b489bd90051e53b68b,
         type: 3}
@@ -14907,13 +14907,6 @@ MonoBehaviour:
     pitch: 0
     loop: 0
     playOnAwake: 0
-    source: {fileID: 0}
-  - name: engine
-    clip: {fileID: 8300000, guid: cc6b468d6fa94461082d25206214b5e3, type: 3}
-    volume: 0.25
-    pitch: 0
-    loop: 1
-    playOnAwake: 1
     source: {fileID: 0}
 --- !u!1001 &2138625827
 PrefabInstance:
