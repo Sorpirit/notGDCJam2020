@@ -90,7 +90,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2575645466380294944, guid: b49ac48e6e20b449ca0322ec22ba407b, type: 3}
+  - {fileID: 2100000, guid: f9c6d90ef72adb346afe9105e95cdc58, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -248,7 +248,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2575645466380294944, guid: b49ac48e6e20b449ca0322ec22ba407b, type: 3}
+  - {fileID: 2100000, guid: f9c6d90ef72adb346afe9105e95cdc58, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -359,7 +359,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2575645466380294944, guid: b49ac48e6e20b449ca0322ec22ba407b, type: 3}
+  - {fileID: 2100000, guid: f9c6d90ef72adb346afe9105e95cdc58, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -493,7 +493,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2575645466380294944, guid: b49ac48e6e20b449ca0322ec22ba407b, type: 3}
+  - {fileID: 2100000, guid: f9c6d90ef72adb346afe9105e95cdc58, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -572,7 +572,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6f64ff572853e49ff8eb9cebec2d5c20, type: 2}
+  - {fileID: 2100000, guid: 8c7f325316af88740bda86169eea491e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -763,7 +763,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 3697306022705332229, guid: b49ac48e6e20b449ca0322ec22ba407b, type: 3}
+  - {fileID: 2100000, guid: a334f49d4aae50849af595eab8b8622d, type: 2}
   - {fileID: -27775801278759386, guid: b49ac48e6e20b449ca0322ec22ba407b, type: 3}
   - {fileID: 7736862657543840325, guid: b49ac48e6e20b449ca0322ec22ba407b, type: 3}
   - {fileID: -2573473741645557540, guid: b49ac48e6e20b449ca0322ec22ba407b, type: 3}
