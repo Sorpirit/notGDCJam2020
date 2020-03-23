@@ -2095,7 +2095,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: music
+  m_text: Music
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 25441ac139c1d294190de96e36d854cd, type: 2}
   m_sharedMaterial: {fileID: 4149904432969360462, guid: 25441ac139c1d294190de96e36d854cd,
@@ -4743,7 +4743,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: sound effects
+  m_text: Sound effects
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 25441ac139c1d294190de96e36d854cd, type: 2}
   m_sharedMaterial: {fileID: 4149904432969360462, guid: 25441ac139c1d294190de96e36d854cd,
@@ -4772,7 +4772,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 19.05
+  m_fontSize: 18.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5055,7 +5055,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'settings
+  m_text: 'Settings
 
 '
   m_isRightToLeft: 0

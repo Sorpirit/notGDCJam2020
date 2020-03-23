@@ -2646,7 +2646,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Main menu
+  m_text: Main Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 25441ac139c1d294190de96e36d854cd, type: 2}
   m_sharedMaterial: {fileID: 4149904432969360462, guid: 25441ac139c1d294190de96e36d854cd,
@@ -2675,7 +2675,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24.25
+  m_fontSize: 24.35
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7383,7 +7383,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: restart
+  m_text: Restart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 25441ac139c1d294190de96e36d854cd, type: 2}
   m_sharedMaterial: {fileID: 4149904432969360462, guid: 25441ac139c1d294190de96e36d854cd,
@@ -8694,7 +8694,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: all your ice cream has melted :(
+  m_text: All your ice cream has melted :(
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 25441ac139c1d294190de96e36d854cd, type: 2}
   m_sharedMaterial: {fileID: 4149904432969360462, guid: 25441ac139c1d294190de96e36d854cd,
@@ -11339,7 +11339,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Main menu
+  m_text: Main Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 25441ac139c1d294190de96e36d854cd, type: 2}
   m_sharedMaterial: {fileID: 4149904432969360462, guid: 25441ac139c1d294190de96e36d854cd,
@@ -15183,7 +15183,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: restart
+  m_text: Restart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 25441ac139c1d294190de96e36d854cd, type: 2}
   m_sharedMaterial: {fileID: 4149904432969360462, guid: 25441ac139c1d294190de96e36d854cd,
@@ -16343,7 +16343,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Main menu
+  m_text: Main Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 25441ac139c1d294190de96e36d854cd, type: 2}
   m_sharedMaterial: {fileID: 4149904432969360462, guid: 25441ac139c1d294190de96e36d854cd,
@@ -17051,7 +17051,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: resume
+  m_text: Resume
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 25441ac139c1d294190de96e36d854cd, type: 2}
   m_sharedMaterial: {fileID: 4149904432969360462, guid: 25441ac139c1d294190de96e36d854cd,
@@ -17207,7 +17207,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'restart
+  m_text: 'Restart
 
 '
   m_isRightToLeft: 0
@@ -19494,7 +19494,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: next level
+  m_text: Next Level
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 25441ac139c1d294190de96e36d854cd, type: 2}
   m_sharedMaterial: {fileID: 4149904432969360462, guid: 25441ac139c1d294190de96e36d854cd,
@@ -20381,7 +20381,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: pause menu
+  m_text: Pause Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 25441ac139c1d294190de96e36d854cd, type: 2}
   m_sharedMaterial: {fileID: 4149904432969360462, guid: 25441ac139c1d294190de96e36d854cd,
